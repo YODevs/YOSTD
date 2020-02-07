@@ -65,6 +65,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConsoleClass.vb" />
     <Compile Include="DateTime.vb" />
     <Compile Include="HashMap.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
