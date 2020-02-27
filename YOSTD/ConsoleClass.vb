@@ -8,7 +8,7 @@
         Console.Out.WriteLine(text)
     End Sub
 
-    Public Shared Sub Title(titleInp As String)
+    Public Shared Sub SetTitle(titleInp As String)
         Console.Title = titleInp
     End Sub
 
