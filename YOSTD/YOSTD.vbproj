@@ -27,7 +27,7 @@
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>..\..\..\YO Co\YO Co\bin\Release\DLLs\</OutputPath>
     <DocumentationFile>YOSTD.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
@@ -68,6 +68,8 @@
     <Compile Include="ConsoleClass.vb" />
     <Compile Include="DateTime.vb" />
     <Compile Include="HashMap.vb" />
+    <Compile Include="ListCrAPI.vb" />
+    <Compile Include="MathFunc.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -83,6 +85,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="YODA_Format.vb" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="My Project\Resources.resx">
