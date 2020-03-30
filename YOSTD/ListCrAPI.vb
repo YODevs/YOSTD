@@ -28,6 +28,13 @@ Public Class [List]
         Return items.Count
     End Function
 
+    Public Function Insert(index As Integer, value As String) As Integer
+        If items.Count = 0 Then
+            Return items.Add(value)
+        End If
+        items.Insert(index, value)
+        Return items.Count
+    End Function
     Public Function Import(YODA_F As String) As Integer
         Dim itemList As ArrayList = YODA_Format.ReadYODA(YODA_F)
         Dim itemCount As Integer = itemList.Count - 1
