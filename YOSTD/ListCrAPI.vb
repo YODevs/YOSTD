@@ -88,6 +88,22 @@ Public Class [List]
     Public Sub Clear()
         items.Clear()
     End Sub
+
+    Public Function Remove(value As Object) As Boolean
+        Dim itemsCount As Integer = items.Count - 1
+        For index = 0 To itemsCount
+            If items(index) = value Then
+                items.RemoveAt(index)
+                Return True
+            End If
+        Next
+        Return False
+    End Function
+
+    Public Sub RemoveAt(index As Integer)
+        items.RemoveAt(index)
+    End Sub
+
     Public Sub Sort()
         items.Sort()
     End Sub
@@ -124,7 +140,7 @@ Public Class [List]
         Return False
     End Function
 
-    Public Function pattern(regexCode As String) As Boolean
+    Public Function Pattern(regexCode As String) As Boolean
         Dim itemsCount As Integer = items.Count - 1
         For index = 0 To itemsCount
             If Regex.IsMatch(items(index).ToString, regexCode) Then Return True
