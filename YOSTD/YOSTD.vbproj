@@ -68,6 +68,7 @@
     <Compile Include="ConsoleClass.vb" />
     <Compile Include="DateTime.vb" />
     <Compile Include="HashMap.vb" />
+    <Compile Include="InteractionClass.vb" />
     <Compile Include="ListCrAPI.vb" />
     <Compile Include="MathFunc.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
