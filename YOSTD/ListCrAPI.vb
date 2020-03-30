@@ -1,4 +1,5 @@
-﻿Imports System.Text.RegularExpressions
+﻿Imports System.IO
+Imports System.Text.RegularExpressions
 
 Public Class [List]
     Dim items As ArrayList
@@ -36,7 +37,18 @@ Public Class [List]
         Return items.Count
     End Function
 
+    Public Sub Save(path As String)
+        File.WriteAllText(path, YODA_Format.WriteYODA(items))
+    End Sub
 
+    Public Sub Load(path As String)
+        If File.Exists(path) = False Then
+            Throw New Exception(path & " - Yoda file not found.")
+            Return
+        End If
+        Dim yodaPlainText As String = File.ReadAllText(path)
+        items = YODA_Format.ReadYODA(yodaPlainText)
+    End Sub
 
     Public Function [Set](YODA_F As String) As Integer
         items.Clear()
