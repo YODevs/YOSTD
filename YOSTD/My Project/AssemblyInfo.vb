@@ -8,14 +8,14 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("YOSTD")>
+<Assembly: AssemblyTitle("YO Standard Library")>
 <Assembly: AssemblyDescription("")>
-<Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("YOSTD")>
+<Assembly: AssemblyCompany("YODevs")>
+<Assembly: AssemblyProduct("YO Standard Library")>
 <Assembly: AssemblyCopyright("Copyright ©  2020")>
 <Assembly: AssemblyTrademark("")>
 
-<Assembly: ComVisible(False)>
+<Assembly: ComVisible(True)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
 <Assembly: Guid("2748410c-6596-4bf6-8159-7788c7022266")>
