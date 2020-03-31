@@ -3,7 +3,6 @@ Public Class Interaction
 
 
     Public Shared cursor As String = "->"
-
     Public Shared Function ShowMenu(items As String) As Object
         Dim menuIndex As Short = 0
         Dim key As ConsoleKeyInfo
@@ -39,5 +38,8 @@ Public Class Interaction
         Return menuItems(menuIndex)
     End Function
 
+    Public Shared Function ShowDialog(caption As String, title As String) As String
+        Return InputBox(caption, title)
+    End Function
 
 End Class
