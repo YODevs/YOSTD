@@ -86,6 +86,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ProgressClass.vb" />
     <Compile Include="YODA_Format.vb" />
   </ItemGroup>
   <ItemGroup>
