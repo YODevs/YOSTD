@@ -87,6 +87,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <Compile Include="ProgressClass.vb" />
+    <Compile Include="QueueClass.vb" />
     <Compile Include="StackClass.vb" />
     <Compile Include="YODA_Format.vb" />
   </ItemGroup>
