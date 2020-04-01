@@ -111,4 +111,47 @@ Public Class Sort
 
 #End Region
 
+
+#Region "BucketSort"
+
+
+    Public Shared Function BucketSort(YODA_F As String) As String
+        Dim items As ArrayList = YODA_Format.ReadYODA(YODA_F)
+        CheckVaildItems(items, "Bucket")
+        Dim minValue As Integer = items(0)
+        Dim maxValue As Integer = items(0)
+
+        For i As Integer = 1 To items.Count - 1
+            If CInt(items(i)) > maxValue Then
+                maxValue = CInt(items(i))
+            End If
+            If CInt(items(i)) < minValue Then
+                minValue = CInt(items(i))
+            End If
+        Next
+
+        Dim bucket As List(Of Integer)() = New List(Of Integer)(maxValue - minValue) {}
+
+        For i As Integer = 0 To bucket.Count - 1
+            bucket(i) = New List(Of Integer)()
+        Next
+
+        For i As Integer = 0 To items.Count - 1
+            bucket(items(i) - minValue).Add(items(i))
+        Next
+
+        Dim k As Integer = 0
+        For i As Integer = 0 To bucket.Count - 1
+            If bucket(i).Count > 0 Then
+                For j As Integer = 0 To bucket(i).Count - 1
+                    items(k) = bucket(i)(j)
+                    k += 1
+                Next
+            End If
+        Next
+        Return YODA_Format.WriteYODA(items)
+    End Function
+
+
+#End Region
 End Class
