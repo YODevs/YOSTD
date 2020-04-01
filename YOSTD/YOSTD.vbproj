@@ -90,6 +90,7 @@
     <Compile Include="QueueClass.vb" />
     <Compile Include="SortClass.vb" />
     <Compile Include="StackClass.vb" />
+    <Compile Include="StopWatchClass.vb" />
     <Compile Include="YODA_Format.vb" />
   </ItemGroup>
   <ItemGroup>
