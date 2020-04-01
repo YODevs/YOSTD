@@ -56,4 +56,59 @@ Public Class Sort
 
 #End Region
 
+
+#Region "BeadSort"
+
+
+    Public Shared Function BeadSort(YODA_F As String) As String
+        Dim items As ArrayList = YODA_Format.ReadYODA(YODA_F)
+        CheckVaildItems(items, "Bead")
+        Dim i As Integer, j As Integer, max As Integer, sum As Integer
+        Dim beads As Byte()
+
+        i = 1
+        max = items(0)
+        While i < items.Count
+            If CInt(items(i)) > max Then
+                max = CInt(items(i))
+            End If
+            i += 1
+        End While
+
+        beads = New Byte(max * items.Count - 1) {}
+
+        For i = 0 To items.Count - 1
+            For j = 0 To items(i) - 1
+                beads(i * max + j) = 1
+            Next
+        Next
+
+        For j = 0 To max - 1
+            sum = 0
+            i = 0
+            While i < items.Count
+                sum += beads(i * max + j)
+                beads(i * max + j) = 0
+                i += 1
+            End While
+
+            For i = items.Count - sum To items.Count - 1
+                beads(i * max + j) = 1
+            Next
+        Next
+
+        For i = 0 To items.Count - 1
+            j = 0
+            While j < max AndAlso Convert.ToBoolean(beads(i * max + j))
+                j += 1
+            End While
+            items(i) = j
+        Next
+
+        Return YODA_Format.WriteYODA(items)
+    End Function
+
+
+#End Region
+
 End Class
