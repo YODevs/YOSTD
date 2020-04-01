@@ -30,4 +30,30 @@ Public Class Sort
 #End Region
 
 
+
+
+#Region "GnomeSort"
+
+    Public Shared Function GnomeSort(YODA_F As String) As String
+        Dim items As ArrayList = YODA_Format.ReadYODA(YODA_F)
+        CheckVaildItems(items, "Bubble")
+        Dim i As Integer = 1
+        While i < items.Count
+            If CInt(items(i - 1)) <= CInt(items(i)) Then
+                i += 1
+            Else
+                Dim tmp As Integer = items(i)
+                items(i) = items(i - 1)
+                items(i - 1) = tmp
+                i -= 1
+                If i = 0 Then
+                    i = 1
+                End If
+            End If
+        End While
+        Return YODA_Format.WriteYODA(items)
+    End Function
+
+#End Region
+
 End Class
