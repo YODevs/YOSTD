@@ -17,6 +17,52 @@
         Return YODA_Format
     End Function
 
+    Friend Shared Function WriteYODA_Map(keys As ArrayList, values As ArrayList) As String
+        Dim countOfItems As Integer = keys.Count - 1
+        If countOfItems = -1 Then Return "![]"
+        If keys.Count <> values.Count Then Throw New Exception("The keys and values are not equal.")
+        Dim YODA_Format As String = "!!["
+        Dim key As String = String.Empty
+        Dim value As String = String.Empty
+
+        For index = 0 To countOfItems
+            key = keys(index)
+            value = values(index)
+            Replace_Unique_Char(key)
+            Replace_Unique_Char(value)
+            If index <> countOfItems Then
+                YODA_Format &= """" & key & """=""" & value & ""","
+            Else
+                YODA_Format &= """" & key & """=""" & value & """]"
+            End If
+        Next
+        Return YODA_Format
+    End Function
+
+
+    Friend Shared Function WriteYODA_Map(items As ArrayList) As String
+        Dim countOfItems As Integer = items.Count - 1
+        If countOfItems = -1 Then Return "![]"
+        If items.Count Mod 2 <> 0 Then Throw New Exception("The keys and values are not equal.")
+        Dim YODA_Format As String = "!!["
+        Dim key As String = String.Empty
+        Dim value As String = String.Empty
+
+        For index = 0 To countOfItems Step 2
+            key = items(index)
+            value = items(index + 1)
+            Replace_Unique_Char(key)
+            Replace_Unique_Char(value)
+            If index + 1 <> countOfItems Then
+                YODA_Format &= """" & key & """=""" & value & ""","
+            Else
+                YODA_Format &= """" & key & """=""" & value & """]"
+            End If
+        Next
+        Return YODA_Format
+
+    End Function
+
     Private Shared Sub Replace_Unique_Char(ByRef obj As String)
         obj = obj.Replace("'", "&apos;")
         obj = obj.Replace("""", "&quot;")
