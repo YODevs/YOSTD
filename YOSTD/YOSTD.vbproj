@@ -10,8 +10,9 @@
     <AssemblyName>YOSTD</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,6 +22,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>YOSTD.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,6 +32,7 @@
     <OutputPath>..\..\..\YO Co\YO Co\bin\Release\DLLs\</OutputPath>
     <DocumentationFile>YOSTD.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <OptionExplicit>On</OptionExplicit>
@@ -68,6 +71,7 @@
     <Compile Include="ConsoleClass.vb" />
     <Compile Include="DateTime.vb" />
     <Compile Include="HashMap.vb" />
+    <Compile Include="HttpClientClass.vb" />
     <Compile Include="InteractionClass.vb" />
     <Compile Include="ListCrAPI.vb" />
     <Compile Include="MathFunc.vb" />
