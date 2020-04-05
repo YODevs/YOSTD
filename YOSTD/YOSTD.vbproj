@@ -95,6 +95,7 @@
     <Compile Include="SortClass.vb" />
     <Compile Include="StackClass.vb" />
     <Compile Include="StopWatchClass.vb" />
+    <Compile Include="URIClass.vb" />
     <Compile Include="YODA_Format.vb" />
   </ItemGroup>
   <ItemGroup>
