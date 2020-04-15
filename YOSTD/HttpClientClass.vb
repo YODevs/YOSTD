@@ -14,7 +14,6 @@ Public Class HTTP
     Public Sub New()
         ServicePointManager.SecurityProtocol = DirectCast(3072, SecurityProtocolType)
         webRequest = HttpWebRequest.Create("http://localhost")
-
     End Sub
 
     Public Sub Create(link As String)
