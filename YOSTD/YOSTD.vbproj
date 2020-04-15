@@ -70,6 +70,7 @@
   <ItemGroup>
     <Compile Include="ConsoleClass.vb" />
     <Compile Include="DateTime.vb" />
+    <Compile Include="FileIOClass.vb" />
     <Compile Include="HashMap.vb" />
     <Compile Include="HttpClientClass.vb" />
     <Compile Include="InteractionClass.vb" />
