@@ -68,6 +68,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ClipboardAPI.vb" />
     <Compile Include="ConsoleClass.vb" />
     <Compile Include="DateTime.vb" />
     <Compile Include="FileIOClass.vb" />
