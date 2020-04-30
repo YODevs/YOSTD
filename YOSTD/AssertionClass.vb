@@ -44,6 +44,17 @@
     End Sub
 
 
+    Public Sub IsContains(idTest As String, realResult As String, idealResult As String)
+        ShowReportUnitTest()
+        Dim result As String = "Failed"
+        If realResult.Contains(idealResult) Then
+            result = "Pass"
+        End If
+        formReportUnitTest.dtReport.Rows.Add(idTest, realResult, idealResult, "Contains", result)
+        ReCheckOutputColor()
+    End Sub
+
+
     Public Sub IsGreater(idTest As String, realResult As String, idealResult As String)
         ShowReportUnitTest()
         Dim result As String = "Failed"
@@ -140,4 +151,6 @@
         formReportUnitTest.dtReport.Rows.Add(idTest, realResult, idealResult, "Less / Eq", result)
         ReCheckOutputColor()
     End Sub
+
+
 End Class
