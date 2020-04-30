@@ -52,6 +52,8 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -68,6 +70,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssertionClass.vb" />
     <Compile Include="ClipboardAPI.vb" />
     <Compile Include="ConsoleClass.vb" />
     <Compile Include="DateTime.vb" />
@@ -94,6 +97,12 @@
     </Compile>
     <Compile Include="ProgressClass.vb" />
     <Compile Include="QueueClass.vb" />
+    <Compile Include="ReportUnitTest.Designer.vb">
+      <DependentUpon>ReportUnitTest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUnitTest.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="SortClass.vb" />
     <Compile Include="StackClass.vb" />
     <Compile Include="StopWatchClass.vb" />
@@ -106,6 +115,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportUnitTest.resx">
+      <DependentUpon>ReportUnitTest.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
