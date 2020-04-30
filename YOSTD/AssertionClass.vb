@@ -74,6 +74,22 @@
         ReCheckOutputColor()
     End Sub
 
+    Public Sub FindOut(idTest As String, realResult As String, idealResult As String)
+        ShowReportUnitTest()
+        Dim result As String = "Failed"
+        Dim items As ArrayList = YODA_Format.ReadYODA(realResult)
+        For index = 0 To items.Count - 1
+            If items(index) = idealResult Then
+                result = "Pass"
+                Exit For
+            End If
+        Next
+
+        formReportUnitTest.dtReport.Rows.Add(idTest, realResult, idealResult, "FindOut", result)
+        ReCheckOutputColor()
+    End Sub
+
+
     Public Sub IsGreater(idTest As String, realResult As String, idealResult As String)
         ShowReportUnitTest()
         Dim result As String = "Failed"
