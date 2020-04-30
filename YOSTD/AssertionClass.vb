@@ -54,6 +54,15 @@
         ReCheckOutputColor()
     End Sub
 
+    Public Sub StartsWith(idTest As String, realResult As String, idealResult As String)
+        ShowReportUnitTest()
+        Dim result As String = "Failed"
+        If realResult.StartsWith(idealResult) Then
+            result = "Pass"
+        End If
+        formReportUnitTest.dtReport.Rows.Add(idTest, realResult, idealResult, "StartsWith", result)
+        ReCheckOutputColor()
+    End Sub
     Public Sub IsGreater(idTest As String, realResult As String, idealResult As String)
         ShowReportUnitTest()
         Dim result As String = "Failed"
