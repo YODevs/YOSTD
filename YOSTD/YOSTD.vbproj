@@ -95,6 +95,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="NotifyAPI.vb" />
+    <Compile Include="NotifyFormInteraction.Designer.vb">
+      <DependentUpon>NotifyFormInteraction.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NotifyFormInteraction.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ProgressClass.vb" />
     <Compile Include="QueueClass.vb" />
     <Compile Include="ReportUnitTest.Designer.vb">
@@ -116,6 +123,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NotifyFormInteraction.resx">
+      <DependentUpon>NotifyFormInteraction.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportUnitTest.resx">
       <DependentUpon>ReportUnitTest.vb</DependentUpon>
