@@ -19,6 +19,13 @@
         Return YODA_Format.WriteYODA_Map(indexList, valueList)
     End Function
 
+    Public Function [Set](YODA_F_Map As String) As Integer
+        Dim mapFormatGen As YODA_Format.YODAMapFormat = YODA_Format.ReadYODA_Map(YODA_F_Map)
+        indexList = mapFormatGen.keys
+        valueList = mapFormatGen.values
+        Return indexList.Count
+    End Function
+
     Public Function Add(key As String, value As String) As Boolean
         If key = Nothing Then
             Throw New Exception("Key is empty.")
