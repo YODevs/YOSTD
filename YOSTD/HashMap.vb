@@ -4,6 +4,11 @@
     Public Sub New()
 
     End Sub
+
+    Public Function Import(YODA_F_Map As String)
+        YODA_Format.ReadYODA_Map(YODA_F_Map)
+        Return 0
+    End Function
     Public Function Add(key As String, value As String) As Boolean
         If key = Nothing Then
             mtDevelop.Develop.VSError("Map Error", "Key is empty.")

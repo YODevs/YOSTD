@@ -1,5 +1,9 @@
 ﻿Public Class YODA_Format
 
+    Public Structure YODAMapFormat
+        Dim keys As ArrayList
+        Dim values As ArrayList
+    End Structure
     Friend Shared Function WriteYODA(items As ArrayList) As String
         Dim countOfItems As Integer = items.Count - 1
         If countOfItems = -1 Then Return "![]"
@@ -115,4 +119,60 @@
 
         Return items
     End Function
+
+    Friend Shared Function ReadYODA_Map(YODA_F As String) As YODAMapFormat
+        YODA_F = YODA_F.Trim
+        Dim item As String = String.Empty
+        Dim items As New YODAMapFormat
+        items.keys = New ArrayList
+        items.values = New ArrayList
+        If YODA_F = String.Empty Or YODA_F = "!![]" Then
+            Return items
+        ElseIf YODA_F.StartsWith("!![") = False Or YODA_F.EndsWith("]") = False Then
+            Throw New Exception("The format of data markup is unclear.")
+        End If
+        YODA_F = YODA_F.Remove(0, 3)
+        YODA_F = YODA_F.Remove(YODA_F.Length - 1).Trim
+        Dim cotStarter As Char = YODA_F(0)
+
+        If cotStarter <> "'" And cotStarter <> """" Then
+            Throw New Exception(cotStarter & " - Starter is incomprehensible, start with a string quotation.")
+        End If
+
+        Dim lenOfYODA As Integer = YODA_F.Length - 1
+        Dim nextItem As Boolean = False
+        Dim setKeys As Boolean = True
+        For index = 0 To lenOfYODA
+            If nextItem Then
+                If YODA_F(index) = " " Then
+                    Continue For
+                ElseIf YODA_F(index) = "," Or YODA_F(index) = "=" Then
+                    nextItem = False
+                    Continue For
+                Else
+                    Throw New Exception(YODA_F(index) & " - Unauthorized character found outside of string.")
+                End If
+            End If
+            item &= YODA_F(index)
+            If item.Length > 1 AndAlso item.StartsWith(cotStarter) AndAlso item.EndsWith(cotStarter) Then
+                item = item.Remove(0, 1)
+                item = item.Remove(item.Length - 1)
+                Return_Unique_Char(item)
+
+                If setKeys Then
+                    items.keys.Add(item)
+                    setKeys = False
+                Else
+                    items.values.Add(item)
+                    setKeys = True
+                End If
+                item = Nothing
+                nextItem = True
+            End If
+        Next
+
+        If items.keys.Count <> items.values.Count Then Throw New Exception("The keys and values are not equal.")
+        Return items
+    End Function
+
 End Class
