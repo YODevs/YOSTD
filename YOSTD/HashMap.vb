@@ -14,6 +14,11 @@
         Next
         Return mapFormatGen.keys.Count
     End Function
+
+    Public Function Clone() As String
+        Return YODA_Format.WriteYODA_Map(indexList, valueList)
+    End Function
+
     Public Function Add(key As String, value As String) As Boolean
         If key = Nothing Then
             Throw New Exception("Key is empty.")
