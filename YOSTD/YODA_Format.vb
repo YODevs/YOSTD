@@ -78,7 +78,7 @@
         Dim items As New ArrayList
         If YODA_F = String.Empty Or YODA_F = "![]" Then
             Return items
-        ElseIf YODA_F.StartsWith("![") = False And YODA_F.EndsWith("]") Then
+        ElseIf YODA_F.StartsWith("![") = False Or YODA_F.EndsWith("]") = False Then
             Throw New Exception("The format of data markup is unclear.")
         End If
         YODA_F = YODA_F.Remove(0, 2)
