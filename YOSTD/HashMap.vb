@@ -16,14 +16,14 @@
     End Function
     Public Function Add(key As String, value As String) As Boolean
         If key = Nothing Then
-            mtDevelop.Develop.VSError("Map Error", "Key is empty.")
+            Throw New Exception("Key is empty.")
         End If
 
         Dim getKey As String
         For index = 0 To indexList.Count - 1
             getKey = indexList(index).ToString
             If getKey = key Then
-                mtDevelop.Develop.VSError("Map Error", "This key is already registered, you can use 'update' method.")
+                Throw New Exception("This key is already registered, you can use 'update' method.")
                 Return False
             End If
         Next
@@ -35,7 +35,7 @@
 
     Public Function ContainsKey(key As String) As String
         If key = Nothing Then
-            mtDevelop.Develop.VSError("Map Error", "Key is empty.")
+            Throw New Exception("Key is empty.")
         End If
 
         Dim getKey As String
@@ -52,7 +52,7 @@
 
     Public Function ContainsValue(value As String) As String
         If value = Nothing Then
-            mtDevelop.Develop.VSError("Map Error", "Value is empty.")
+            Throw New Exception("Value is empty.")
         End If
 
         Dim getValue As String
@@ -70,7 +70,7 @@
 
     Public Function [Get](key As String) As String
         If key = Nothing Then
-            mtDevelop.Develop.VSError("Map Error", "Key is empty.")
+            Throw New Exception("Key is empty.")
         End If
 
         Dim getKey As String
@@ -81,7 +81,7 @@
             End If
         Next
 
-        mtDevelop.Develop.VSError("Map Error", key & " - Key is not defined.")
+        Throw New Exception(key & " - Key is not defined.")
 
         Return -1
     End Function
@@ -90,14 +90,14 @@
         If indexRep > 0 AndAlso indexList.Count > indexRep Then
             Return valueList(indexRep)
         Else
-            mtDevelop.Develop.VSError("Map Error", "The index '" & indexRep & "' entered in the validation was rejected.")
+            Throw New Exception("The index '" & indexRep & "' entered in the validation was rejected.")
         End If
 
         Return -1
     End Function
     Public Function [Remove](key As String) As Boolean
         If key = Nothing Then
-            mtDevelop.Develop.VSError("Map Error", "Key is empty.")
+            Throw New Exception("Key is empty.")
         End If
 
         Dim getKey As String
@@ -110,7 +110,7 @@
             End If
         Next
 
-        mtDevelop.Develop.VSError("Map Error", key & " - Key is not defined.")
+        Throw New Exception(key & " - Key is not defined.")
         Return False
     End Function
 
@@ -161,7 +161,7 @@
 
     Public Function [Update](key As String, value As String) As Boolean
         If key = Nothing Then
-            mtDevelop.Develop.VSError("Map Error", "Key is empty.")
+            Throw New Exception("Key is empty.")
         End If
 
         Dim getKey As String
@@ -174,7 +174,7 @@
             End If
         Next
 
-        mtDevelop.Develop.VSError("Map Error", key & " - Key is not defined.")
+        Throw New Exception(key & " - Key is not defined.")
         Return False
     End Function
 End Class
