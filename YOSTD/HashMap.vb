@@ -5,9 +5,14 @@
 
     End Sub
 
-    Public Function Import(YODA_F_Map As String)
-        YODA_Format.ReadYODA_Map(YODA_F_Map)
-        Return 0
+    Public Function Import(YODA_F_Map As String) As Integer
+        Dim mapFormatGen As YODA_Format.YODAMapFormat = YODA_Format.ReadYODA_Map(YODA_F_Map)
+        Dim itemCount As Integer = mapFormatGen.keys.Count - 1
+        For index = 0 To itemCount
+            indexList.Add(mapFormatGen.keys(index))
+            valueList.Add(mapFormatGen.values(index))
+        Next
+        Return mapFormatGen.keys.Count
     End Function
     Public Function Add(key As String, value As String) As Boolean
         If key = Nothing Then
