@@ -20,7 +20,7 @@ Public Class [List]
 
     Public Function AddWithSplit(values As Object, pattern As Object) As Integer
         Dim splitItems() As String
-        splitItems = Regex.Split(values, pattern)
+        splitItems = System.Text.RegularExpressions.Regex.Split(values, pattern)
         Dim listSplitLength As Integer = splitItems.Length - 1
         For index = 0 To listSplitLength
             items.Add(splitItems(index))
@@ -143,7 +143,7 @@ Public Class [List]
     Public Function Pattern(regexCode As String) As Boolean
         Dim itemsCount As Integer = items.Count - 1
         For index = 0 To itemsCount
-            If Regex.IsMatch(items(index).ToString, regexCode) Then Return True
+            If System.Text.RegularExpressions.Regex.IsMatch(items(index).ToString, regexCode) Then Return True
         Next
         Return False
     End Function

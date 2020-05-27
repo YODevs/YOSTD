@@ -104,6 +104,7 @@
     </Compile>
     <Compile Include="ProgressClass.vb" />
     <Compile Include="QueueClass.vb" />
+    <Compile Include="RegularExpressionsWra.vb" />
     <Compile Include="ReportUnitTest.Designer.vb">
       <DependentUpon>ReportUnitTest.vb</DependentUpon>
     </Compile>
