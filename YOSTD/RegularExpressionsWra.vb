@@ -1,6 +1,6 @@
 ﻿Imports System.Text
 
-Public Class [regex]
+Public Class [Regex]
 
     Public regexOpt As RegularExpressions.RegexOptions
     Public matchObj As RegularExpressions.Match
@@ -33,7 +33,7 @@ Public Class [regex]
                 Throw New Exception("Must first call the 'MatchStr($cust _text,$cust pattern)' function.")
                 Return 0
             End If
-            Return matchObj.Success
+            Return matchObj.Value
         End Get
     End Property
 
