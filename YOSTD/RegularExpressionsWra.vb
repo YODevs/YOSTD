@@ -47,6 +47,27 @@ Public Class [Regex]
         End Get
     End Property
 
+    Public ReadOnly Property MatchMap() As String
+        Get
+            If IsNothing(matchObj) Then
+                Throw New Exception("Must first call the 'MatchStr($cust _text,$cust pattern)' function.")
+                Return 0
+            End If
+            Dim nPropName, nPropValue As ArrayList
+            nPropName = New ArrayList
+            nPropValue = New ArrayList
+
+            nPropName.Add("MatchResult")
+            nPropValue.Add(MatchResult)
+            nPropName.Add("MatchLength")
+            nPropValue.Add(MatchLength)
+            nPropName.Add("MatchValue")
+            nPropValue.Add(MatchValue)
+
+            Return YODA_Format.WriteYODA_Map(nPropName, nPropValue)
+        End Get
+    End Property
+
     Public Function IsMatch(text As String, pattern As String) As Boolean
         Return RegularExpressions.Regex.IsMatch(text, pattern, regexOpt)
     End Function
