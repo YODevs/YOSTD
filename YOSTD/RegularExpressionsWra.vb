@@ -76,4 +76,9 @@ Public Class [Regex]
         matchObj = RegularExpressions.Regex.Match(text, pattern, regexOpt)
         Return matchObj.Value
     End Function
+
+    Public Function NextMatch() As Boolean
+        matchObj = matchObj.NextMatch
+        Return matchObj.Success
+    End Function
 End Class
