@@ -4,11 +4,22 @@ Imports System.Security
 Imports System.Text
 
 Public Class MathFunc
-    Public Shared PI As String = "3.1415926535897931"
-    Public Shared TUA As String = "6.2831853071795862"
-    Public Shared E As String = "2.718281828459045"
 
-
+    Public Shared ReadOnly Property PI() As Double
+        Get
+            Return 3.14159265358979
+        End Get
+    End Property
+    Public Shared ReadOnly Property TUA() As Double
+        Get
+            Return 6.28318530717958
+        End Get
+    End Property
+    Public Shared ReadOnly Property E() As Double
+        Get
+            Return 2.71828182845904
+        End Get
+    End Property
     Public Shared Function Factorial(ByVal number As Integer) As Long
         If number < 0 Then
             'Unexpected number
