@@ -16,13 +16,20 @@
         End If
     End Sub
     Private Sub ReCheckOutputColor()
+        Dim iPass, iFail As Int16
+        iPass = 0
+        iFail = 0
         For index = 0 To formReportUnitTest.dtReport.Rows.Count - 2
             If formReportUnitTest.dtReport.Rows.Item(index).Cells(4).Value = "Pass" Then
+                iPass += 1
                 formReportUnitTest.dtReport.Rows.Item(index).Cells(4).ToolTipText = "Pass Test"
             Else
-                formReportUnitTest.dtReport.Rows.Item(index).Cells(4).ErrorText = "Faild Test"
+                iFail += 1
+                formReportUnitTest.dtReport.Rows.Item(index).Cells(4).ErrorText = "Failed Test"
             End If
         Next
+        formReportUnitTest.PassLabelStatus.Text = iPass & " Passed"
+        formReportUnitTest.FailedLabelStatus.Text = iFail & " Failed"
     End Sub
 
     Public Sub IsTrue(idTest As String, realResult As String, idealResult As String)
