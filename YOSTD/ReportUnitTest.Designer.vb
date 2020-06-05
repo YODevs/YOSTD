@@ -28,6 +28,7 @@ Partial Class ReportUnitTest
         Me.ideal_Result = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Operation = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.response = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         CType(Me.dtReport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -40,7 +41,7 @@ Partial Class ReportUnitTest
         Me.dtReport.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dtReport.Location = New System.Drawing.Point(0, 0)
         Me.dtReport.Name = "dtReport"
-        Me.dtReport.Size = New System.Drawing.Size(454, 389)
+        Me.dtReport.Size = New System.Drawing.Size(455, 386)
         Me.dtReport.TabIndex = 0
         '
         'id
@@ -69,11 +70,21 @@ Partial Class ReportUnitTest
         Me.response.HeaderText = "Response"
         Me.response.Name = "response"
         '
+        'StatusStrip1
+        '
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 364)
+        Me.StatusStrip1.Name = "StatusStrip1"
+        Me.StatusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode
+        Me.StatusStrip1.Size = New System.Drawing.Size(455, 22)
+        Me.StatusStrip1.TabIndex = 2
+        Me.StatusStrip1.Text = "StatusStrip1"
+        '
         'ReportUnitTest
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(454, 389)
+        Me.ClientSize = New System.Drawing.Size(455, 386)
+        Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.dtReport)
         Me.Name = "ReportUnitTest"
         Me.ShowIcon = False
@@ -81,6 +92,7 @@ Partial Class ReportUnitTest
         Me.Text = "Report UnitTest"
         CType(Me.dtReport, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -90,4 +102,5 @@ Partial Class ReportUnitTest
     Friend WithEvents ideal_Result As Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Operation As Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents response As Windows.Forms.DataGridViewTextBoxColumn
+    Friend WithEvents StatusStrip1 As Windows.Forms.StatusStrip
 End Class

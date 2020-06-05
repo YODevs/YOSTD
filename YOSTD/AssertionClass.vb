@@ -10,6 +10,9 @@
         If formReportUnitTest.IsHandleCreated = False Then
             th.SetApartmentState(Threading.ApartmentState.STA)
             th.Start()
+        Else
+            Threading.Thread.Sleep(15)
+            formReportUnitTest.dtReport.AutoResizeColumns()
         End If
     End Sub
     Private Sub ReCheckOutputColor()
