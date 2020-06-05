@@ -84,6 +84,16 @@
         ReCheckOutputColor()
     End Sub
 
+    Public Sub Regex(idTest As String, input As String, pattern As String)
+        ShowReportUnitTest()
+        Dim result As String = "Failed"
+        If System.Text.RegularExpressions.Regex.IsMatch(input, pattern) Then
+            result = "Pass"
+        End If
+        formReportUnitTest.dtReport.Rows.Add(idTest, input, "Regex:'" & pattern & "'", "Regex", result)
+        ReCheckOutputColor()
+    End Sub
+
     Public Sub FindOut(idTest As String, realResult As String, idealResult As String)
         ShowReportUnitTest()
         Dim result As String = "Failed"
