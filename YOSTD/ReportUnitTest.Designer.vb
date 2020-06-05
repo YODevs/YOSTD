@@ -33,6 +33,7 @@ Partial Class ReportUnitTest
         '
         'dtReport
         '
+        Me.dtReport.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.dtReport.BackgroundColor = System.Drawing.SystemColors.ControlLightLight
         Me.dtReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.dtReport.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.id, Me.real_result, Me.ideal_Result, Me.Operation, Me.response})
@@ -46,7 +47,6 @@ Partial Class ReportUnitTest
         '
         Me.id.HeaderText = "ID Test"
         Me.id.Name = "id"
-        Me.id.Width = 70
         '
         'real_result
         '
@@ -63,13 +63,11 @@ Partial Class ReportUnitTest
         Me.Operation.HeaderText = "Operation"
         Me.Operation.Name = "Operation"
         Me.Operation.ReadOnly = True
-        Me.Operation.Width = 70
         '
         'response
         '
         Me.response.HeaderText = "Response"
         Me.response.Name = "response"
-        Me.response.Width = 70
         '
         'ReportUnitTest
         '
