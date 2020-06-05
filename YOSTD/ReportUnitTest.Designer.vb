@@ -29,8 +29,8 @@ Partial Class ReportUnitTest
         Me.Operation = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.response = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.FailedLabelStatus = New System.Windows.Forms.ToolStripStatusLabel()
         Me.PassLabelStatus = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.FailedLabelStatus = New System.Windows.Forms.ToolStripStatusLabel()
         CType(Me.dtReport, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
@@ -44,7 +44,7 @@ Partial Class ReportUnitTest
         Me.dtReport.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dtReport.Location = New System.Drawing.Point(0, 0)
         Me.dtReport.Name = "dtReport"
-        Me.dtReport.Size = New System.Drawing.Size(474, 386)
+        Me.dtReport.Size = New System.Drawing.Size(560, 395)
         Me.dtReport.TabIndex = 0
         '
         'id
@@ -76,19 +76,11 @@ Partial Class ReportUnitTest
         'StatusStrip1
         '
         Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PassLabelStatus, Me.FailedLabelStatus})
-        Me.StatusStrip1.Location = New System.Drawing.Point(0, 364)
+        Me.StatusStrip1.Location = New System.Drawing.Point(0, 373)
         Me.StatusStrip1.Name = "StatusStrip1"
-        Me.StatusStrip1.Size = New System.Drawing.Size(474, 22)
+        Me.StatusStrip1.Size = New System.Drawing.Size(560, 22)
         Me.StatusStrip1.TabIndex = 2
         Me.StatusStrip1.Text = "StatusStrip1"
-        '
-        'FailedLabelStatus
-        '
-        Me.FailedLabelStatus.BackColor = System.Drawing.Color.DarkRed
-        Me.FailedLabelStatus.ForeColor = System.Drawing.Color.Snow
-        Me.FailedLabelStatus.Name = "FailedLabelStatus"
-        Me.FailedLabelStatus.Size = New System.Drawing.Size(47, 17)
-        Me.FailedLabelStatus.Text = "0 Failed"
         '
         'PassLabelStatus
         '
@@ -98,11 +90,19 @@ Partial Class ReportUnitTest
         Me.PassLabelStatus.Size = New System.Drawing.Size(52, 17)
         Me.PassLabelStatus.Text = "0 Passed"
         '
+        'FailedLabelStatus
+        '
+        Me.FailedLabelStatus.BackColor = System.Drawing.Color.DarkRed
+        Me.FailedLabelStatus.ForeColor = System.Drawing.Color.Snow
+        Me.FailedLabelStatus.Name = "FailedLabelStatus"
+        Me.FailedLabelStatus.Size = New System.Drawing.Size(47, 17)
+        Me.FailedLabelStatus.Text = "0 Failed"
+        '
         'ReportUnitTest
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(474, 386)
+        Me.ClientSize = New System.Drawing.Size(560, 395)
         Me.Controls.Add(Me.StatusStrip1)
         Me.Controls.Add(Me.dtReport)
         Me.Name = "ReportUnitTest"
