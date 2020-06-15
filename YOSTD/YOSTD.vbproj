@@ -74,6 +74,7 @@
     <Compile Include="ClipboardAPI.vb" />
     <Compile Include="ConsoleClass.vb" />
     <Compile Include="DateTime.vb" />
+    <Compile Include="DCL.vb" />
     <Compile Include="FileIOClass.vb" />
     <Compile Include="HashMap.vb" />
     <Compile Include="HttpClientClass.vb" />
